@@ -17,7 +17,7 @@ function Partners() {
     className="partners">
       <Container className="d-flex align-items-center flex-nowrap overflow-hidden">
         <Swiper
-          className="mySwiper"
+          className="mySwiper partners-swiper"
           loop={true}
           grabCursor={true}
           breakpoints={{

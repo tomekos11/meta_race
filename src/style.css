@@ -1,27 +1,83 @@
+:root, [data-bs-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --gray-150: #3d4467;
+  --gray-50: #6c7284;
+  --gray-90: #9a9fb8;
+  --gray-100: #a0a6c1;
+  --normal-text: #3d4467;
+  --card-text: #435d77;
+  --bg-black-100: #fcfdff;
+  --bg-black-200:  #f0f2f5;
+  --link-color: #f0f8ff;
+  --primary-color: #356df6;
+  --overlay-bg: rgba(0, 0, 0, 0.3);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] {
+  --bg-color: #121420;
+  --text-color: #ffffff;
+  --gray-150: #3d4467;
+  --gray-50: #c3c5ce;
+  --gray-90: #5e6379;
+  --gray-100: #545b79;
+  --normal-text: white;
+  --card-text: white;
+  --bg-black-100: #1b1f33;
+  --bg-black-200: #1b1f33;
+  --primary-color: #356df6;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --card-shadow: rgba(0, 0, 0, 0.6);
+}
+
+.card-text {
+  color: var(--card-text);
+}
+
+.normal-text {
+  color: var(--normal-text);
+}
+
+.link-text {
+  color: var(--link-color);
+}
+
+[data-bs-theme="light"] .logo {
+  filter: brightness(0.01);
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #121420;
-}
-
-:root {
-  --gray-150: #3d4467;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .gray-50 {
-  color: #c3c5ce;
+  color: var(--gray-50);
 }
 
 .gray-90 {
-  color: #5e6379;
+  color: var(--gray-90);
 }
 
 .gray-100 {
-  color: #545b79;
+  color: var(--gray-100);
 }
 
 .bg-black-100 {
-  background-color: #1b1f33;
+  background-color: var(--bg-black-100);
+}
+
+.bg-black-200 {
+  background-color: var(--bg-black-200);
+}
+
+.btn:hover {
+  color: var(--bs-btn-hover-color) !important;
 }
 
 .title {
@@ -29,26 +85,24 @@ body {
   max-width: 710px;
   margin: 0 0 30px;
   font-size: 48px;
-  color: white;
+  color: var(--text-color);
 }
 
 .w-min-content {
   width: min-content;
 }
 
-/* Start swiper style */
-
 .swiper {
   width: 100%;
   height: fit-content;
   padding-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .swiper-slide {
   font-size: 18px;
   margin-right: 15px;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,30 +110,29 @@ body {
 
 .swiper-slide img {
   display: block;
-  /* width: 100%; */
   height: 100%;
   object-fit: cover;
 }
 
-.swiper {
-  margin-left: auto;
-  margin-right: auto;
+[data-bs-theme="light"] .partners-swiper img {
+  filter: brightness(0.01);
 }
 
+
 .swiper-pagination-bullet {
-  background-color: white;
+  background-color: var(--text-color);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: white;
+  color: var(--text-color);
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 20px;
   padding: 10px 15px;
-  background-color: rgb(18 20 32 / 50%);
+  background-color: var(--overlay-bg);
   border-radius: 50%;
 }
 
@@ -87,10 +140,7 @@ body {
   margin-right: 15px;
 }
 
-/* End swiper style */
-
-/* start Loading Style */
-
+/* Loading Style */
 .loading::before {
   content: "";
   position: absolute;
@@ -99,19 +149,14 @@ body {
   left: -10%;
   width: 150px;
   height: 150px;
-  background-color: #356df6;
+  background-color: var(--primary-color);
   border-radius: 50%;
   filter: blur(12rem);
   z-index: -999;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  -webkit-filter: blur(12rem);
 }
 
 .loading .container div h1 {
-  color: white;
+  color: var(--text-color);
 }
 
 .loading .container .features {
@@ -124,10 +169,6 @@ body {
   transform: translateX(-50%);
   width: fit-content;
   display: flex;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
 }
 
 .loading .container div .cards .card {
@@ -137,50 +178,40 @@ body {
 .loading .container div .cards .card:first-child {
   left: -25px;
   transform: rotate(-10deg);
-  -webkit-transform: rotate(-10deg);
-  -moz-transform: rotate(-10deg);
-  -ms-transform: rotate(-10deg);
-  -o-transform: rotate(-10deg);
 }
 
 .loading .container div .cards .card:last-child {
   position: absolute;
   top: 25px;
   right: -120px;
-  box-shadow: -3px -4px 11px 5px #00000059;
+  box-shadow: -3px -4px 11px 5px var(--card-shadow);
   transform: rotate(10deg);
-  -webkit-transform: rotate(10deg);
-  -moz-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
 }
 
 .loading .container div .cards .card .card-body img {
   max-width: 190px;
 }
 
-/* End loading style */
-
-/* Start partners style */
-
+/* Partners style */
 .partners .container {
   gap: 93px;
   margin-top: 7rem;
 }
-/* End partners style */
 
-/* Start properties style */
+/* Properties style */
 .properties .container {
   margin-top: 5rem;
 }
+
 .properties .container .tabs {
   gap: 16px;
 }
+
 .properties .tabs button {
   padding: 5px 14px;
   font-weight: normal;
   font-size: 14px;
-  color: #c3c5ce;
+  color: var(--gray-50);
 }
 
 .properties .container .tabs button.active {
@@ -190,7 +221,7 @@ body {
 .like {
   position: absolute;
   color: white;
-  background-color: rgb(18 20 32 / 75%);
+  background-color: rgba(18, 20, 32, 0.75); /* stałe */
   padding: 10px;
   border-radius: 50%;
   top: 10px;
@@ -213,9 +244,7 @@ body {
   font-size: 14px;
 }
 
-/* End properties style */
-
-/* Start about us */
+/* About us */
 .about .container {
   gap: 50px;
   margin-top: 7rem;
@@ -228,6 +257,7 @@ body {
 
 .about .container div p {
   font-size: 14px;
+  color: var(--text-color);
 }
 
 .about .container div div {
@@ -254,12 +284,8 @@ body {
   color: white;
   width: 100%;
   height: 150px;
-  background-color: #0000004a;
+  background-color: rgba(0, 0, 0, 0.29);
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 
 .about .container div div:first-child div:first-child img:first-child,
@@ -278,6 +304,7 @@ body {
 .about .container div div:last-child div:first-child::before {
   content: "Portugal";
 }
+
 .about .container div div:last-child div:last-child::before {
   content: "Brazil";
 }
@@ -293,19 +320,11 @@ body {
   top: -10%;
   left: 70%;
   transform: translateX(-50%);
-  background-color: #356df6;
+  background-color: var(--primary-color);
   color: white;
   font-size: 10px;
   letter-spacing: 0.3px;
   border-radius: 20px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
 
 .about .container div div:last-child div:first-child::after {
@@ -319,25 +338,14 @@ body {
   bottom: -10%;
   right: 70%;
   transform: translateX(50%);
-  background-color: #356df6;
+  background-color: var(--primary-color);
   color: white;
   font-size: 10px;
   letter-spacing: 0.3px;
   border-radius: 20px;
-  -webkit-transform: translateX(50%);
-  -moz-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  -o-transform: translateX(50%);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
 
-/* End about us */
-
-/* Start developers */
-
+/* Developers */
 .developers {
   margin-top: 8rem;
   overflow-x: clip;
@@ -350,20 +358,13 @@ body {
 .developers .swiper .swiper-slide div {
   border: 1px solid var(--gray-150);
   border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
 }
 
 .developers .mySwiper .swiper-slide div h6 {
   width: max-content;
 }
 
-/* End developers */
-
-/* Start join */
-
+/* Join */
 .join .container {
   margin-top: 7rem;
 }
@@ -374,15 +375,8 @@ body {
 
 .join .mySwiper .swiper-wrapper .swiper-slide {
   height: auto;
-}
-
-.join .mySwiper .swiper-wrapper .swiper-slide {
-  border: 1px solid #3d4467;
+  border: 1px solid var(--gray-150);
   border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
 }
 
 .join .mySwiper div img {
@@ -390,10 +384,7 @@ body {
   max-height: 68px;
 }
 
-/* End join */
-
-/* Start subscribe */
-
+/* Subscribe */
 .subscribe .container {
   position: relative;
   padding-top: 6rem;
@@ -408,13 +399,9 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #1b1f33;
+  background-color: var(--bg-black-100);
   border-radius: 12px;
   z-index: -10;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
 }
 
 .subscribe .container::after {
@@ -424,31 +411,25 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: url(./images/logo/Vector.png), url(./images/logo/Vector-1.png);
+  background-image: url(./images/logo/Vector.png),
+    url(./images/logo/Vector-1.png);
   background-repeat: no-repeat;
   background-position: bottom right 30px, top 10px left;
   z-index: -1;
 }
 
 .subscribe .container div {
-  border: 1px solid #545b79;
+  border: 1px solid var(--gray-100);
   border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
 }
 
 .subscribe .container div input:focus {
   outline: none;
 }
 
-/* End subscribe */
-
-/* Start footer */
-
+/* Footer */
 footer {
-  border-top: 1px solid #3d4467;
+  border-top: 1px solid var(--gray-150);
   overflow-x: clip;
 }
 
@@ -462,15 +443,11 @@ footer .container div ul h6 {
 }
 
 footer .container div ul li {
-  color: white;
+  color: var(--text-color);
   list-style: none;
   font-weight: 100;
   cursor: pointer;
   transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
 }
 
 footer .container div ul li:hover {
@@ -482,7 +459,7 @@ footer .container div:has(img) {
 }
 
 footer .container div:has(p a) {
-  border-top: 1px solid #1b1f33;
+  border-top: 1px solid var(--bg-black-100);
 }
 
 footer .container div ul:first-child {
@@ -491,6 +468,7 @@ footer .container div ul:first-child {
 
 footer .container div p {
   font-size: 14px;
+  color: var(--text-color);
 }
 
 footer .container div ul li:nth-child(1),
@@ -501,7 +479,7 @@ footer .container div ul li:nth-child(2) {
 footer div span {
   width: 100%;
   height: 1px;
-  background-color: #1b1f33;
+  background-color: var(--bg-black-100);
 }
 
 /* End footer */

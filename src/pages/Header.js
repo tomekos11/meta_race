@@ -31,15 +31,15 @@ function Loading() {
             className="d-none d-md-flex justify-content-between align-items-center my-4"
           >
             <div>
-              <h5 className="fw-bold fs-1">12K+</h5>
+              <h5 className="fw-bold fs-1 normal-text">12K+</h5>
               <span className="gray-100">properties</span>
             </div>
             <div>
-              <h5 className="fw-bold fs-1">10K+</h5>
+              <h5 className="fw-bold fs-1 normal-text">10K+</h5>
               <span className="gray-100">auction</span>
             </div>
             <div>
-              <h5 className="fw-bold fs-1">12K+</h5>
+              <h5 className="fw-bold fs-1 normal-text">12K+</h5>
               <span className="gray-100">developers</span>
             </div>
           </div>
@@ -61,7 +61,7 @@ function Loading() {
                   />
                   <i className="fa-regular fa-heart like" onClick={like}></i>
                 </div>
-                <h5 className="mt-2 text-white fw-normal">Residence Rybna</h5>
+                <h5 className="mt-2 card-text fw-normal">Residence Rybna</h5>
                 <p className="gray-90">@UA real estate agency</p>
                 <div className="d-flex">
                   <div className="me-3">
@@ -69,7 +69,7 @@ function Loading() {
                     <span className="gray-90">Remaining Time</span>
                   </div>
                   <div>
-                    <h6 className="text-white">29.71 ETH</h6>
+                    <h6 className="card-text">29.71 ETH</h6>
                     <span className="gray-90">Current Bid</span>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ function Loading() {
                   />
                   <i className="fa-regular fa-heart like" onClick={like}></i>
                 </div>
-                <h5 className="mt-2 text-white fw-normal">Blue Sky</h5>
+                <h5 className="mt-2 card-text fw-normal">Blue Sky</h5>
                 <p className="gray-90">@ERA Ukraine Real Estate</p>
                 <div className="d-flex">
                   <div className="me-3">
@@ -93,7 +93,7 @@ function Loading() {
                     <span className="gray-90">Remaining Time</span>
                   </div>
                   <div>
-                    <h6 className="text-white">17.31 ETH</h6>
+                    <h6 className="card-text">17.31 ETH</h6>
                     <span className="gray-90">Current Bid</span>
                   </div>
                 </div>

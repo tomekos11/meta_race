@@ -14,7 +14,7 @@ function Footer() {
             <img
               src={require("../images/logo/logo.png")}
               alt="logo"
-              className="mb-3"
+              className="mb-3 logo"
             />
             <p className="gray-100">
               Please contact us if you have any specific <br /> idea or request.

@@ -12,7 +12,7 @@ function Subscribe() {
         <p className="gray-50 text-center mt-3 mb-5">
           Stay up to date with Renting-Platform or get involved in our community
         </p>
-        <div className="d-flex justify-content-between align-items-center mx-auto p-1">
+        <div className="d-flex justify-content-between align-items-center mx-auto p-1 bg-white">
           <input
             placeholder="Enter Your Email"
             className="bg-transparent border-0 text-white ps-1 w-100"
